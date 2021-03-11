@@ -26,15 +26,15 @@ class Bank
 		 ***********/
 		void OpenAccount(Account *newAcct);
 		bool Deposit(Date 	transDate,
-								 int	acctNum,
-								 float	amount);
+			     int	acctNum,
+			     float	amount);
 		bool Withdrawal(Date 	transDate,
-										int		acctNum,
-										float	amount);
+				int		acctNum,
+				float	amount);
 		bool Transfer(Date 	transDate,
-								  int	acctNum,
-								  float	amount,
-								  int	transFromAcctNum);
+			      int	acctNum,
+			      float	amount,
+			      int	transFromAcctNum);
 
 		/*************
 		 * ACCESSORS *
@@ -49,9 +49,9 @@ class Bank
 		struct AccountList
 		{
 			Account		*customerAccount;	//IN   		 - account's pointer
-			AccountList	*next;				//CALC 		 - points to the next node
+			AccountList	*next;			//CALC 		 - points to the next node
 		};
-		AccountList *head;					//CALC 		 - head of the list
+		AccountList *head;				//CALC 		 - head of the list
 		int 		numberOfAccts;			//CALC & OUT - total number of accounts
 };
 
