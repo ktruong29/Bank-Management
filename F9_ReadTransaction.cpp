@@ -25,15 +25,15 @@
 ******************************************************************************/
 void ReadTransaction(Bank aBank) //IN - bank class object
 {
-	Date today;						//CALC - initialize date in Date class
+	Date today;			//CALC - initialize date in Date class
 
-	unsigned short month;					//IN - month of transaction
-	unsigned short day;						//IN - day of transaction
-	unsigned short year;					//IN - year of transaction
-	int 		   		 acctNum;				//IN - account number
-	int			   		 transfAcctNum;	//IN - transfer account number
-	float 		   	 amount;				//IN - amount
-	string 		   	 acctType;			//IN - account type
+	unsigned short month;		//IN - month of transaction
+	unsigned short day;		//IN - day of transaction
+	unsigned short year;		//IN - year of transaction
+	int 	       acctNum;		//IN - account number
+	int	       transfAcctNum;	//IN - transfer account number
+	float 	       amount;		//IN - amount
+	string 	       acctType;	//IN - account type
 
 	ifstream fin;		//CALC - input file stream variable
 
