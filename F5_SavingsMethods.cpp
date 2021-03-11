@@ -43,10 +43,10 @@ Savings::Savings()
  * 	 A new savings object is created
  *****************************************************************************/
 Savings::Savings(Date	openingDate,	//IN - account's open date
-				  	  	 string	name,			//IN - client's name
-								 int	accountNum,		//IN - account's number
-								 float	balance,		//IN - account's balance
-								 float	intRate)		//IN - interest rate of savings account
+		 string	name,		//IN - client's name
+		 int	accountNum,	//IN - account's number
+		 float	balance,	//IN - account's balance
+		 float	intRate)	//IN - interest rate of savings account
 {
 	Account::SetAllValues(openingDate, name, accountNum, balance);
 	interestRate	 = intRate;
@@ -86,10 +86,10 @@ Savings::~Savings(){}
  * 	 Returns nothing
  *****************************************************************************/
 void Savings::SetAllValues(Date 	openingDate,	//IN - account's open date
-												   string	name,			//IN - client's name
-												   int		accountNum,		//IN - account's number
-												   float	balance,		//IN - account's balance
-												   float	intRate)		//IN - interest rate of savings
+			   string	name,		//IN - client's name
+			   int		accountNum,	//IN - account's number
+			   float	balance,	//IN - account's balance
+			   float	intRate)	//IN - interest rate of savings
 {
 	Account::SetAllValues(openingDate, name, accountNum, balance);
 	interestRate	 = intRate;
@@ -132,7 +132,7 @@ void Savings::SetInterestRate(float intRate)	//IN - interest rate of savings
  * 	 Returns valid withdraw (Bool)
  *****************************************************************************/
 bool Savings::Withdrawal(Date 	today,	//IN - date of transaction
-						 						 float	amount)	//IN - amount to deposit
+			 float	amount)	//IN - amount to deposit
 {
 	bool validWithdraw;	//CALC - validating withdrawal
 
