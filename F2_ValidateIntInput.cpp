@@ -25,11 +25,11 @@
 * 	- This function will return an integer
 ******************************************************************************/
 unsigned short ValidateIntInput(string prompt,			//IN- the prompt
-																unsigned short minNum,	//IN- the lower range
-																unsigned short maxNum)	//IN- the upper range
+				unsigned short minNum,	//IN- the lower range
+				unsigned short maxNum)	//IN- the upper range
 {
-	bool 			 			 invalid;		//PROC- True when user's input is invalid
-	unsigned short	 num;			  //IN & PROC-the integer input from user
+	bool 		invalid;	//PROC- True when user's input is invalid
+	unsigned short	num;		//IN & PROC-the integer input from user
 
 	do
 	{
@@ -41,7 +41,7 @@ unsigned short ValidateIntInput(string prompt,			//IN- the prompt
 		if(!(cin >> num))
 		{
 			cout << "\n**** Please input a NUMBER between " << minNum << " and "
-				 << maxNum << " ****\n\n";
+			     << maxNum << " ****\n\n";
 
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
