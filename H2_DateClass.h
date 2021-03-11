@@ -20,28 +20,28 @@ const unsigned short CURRENT_YR = 2018;
 class Date
 {
 	public:
-			/******************************************************************
-						CONSTRUCTORS	&	DESTRUCTOR
-			 ******************************************************************/
+		/******************************************************************
+					CONSTRUCTORS	&	DESTRUCTOR
+		 ******************************************************************/
 		Date();
 		//uses private utility methods
 		Date(unsigned short month,
-			 	 unsigned short day,
-			 	 unsigned short year);
+		     unsigned short day,
+		     unsigned short year);
 		~Date();
-			/*****************************************************************
-								MUTATORS
-			 *****************************************************************/
-			//uses private utility methods
+		/*****************************************************************
+						MUTATORS
+		 *****************************************************************/
+		//uses private utility methods
 		void SetDate(unsigned short month,
-							   unsigned short day,
-							   unsigned short year);
-			/*****************************************************************
-								ACCESSORS
-			 *****************************************************************/
+			     unsigned short day,
+			     unsigned short year);
+		/*****************************************************************
+						ACCESSORS
+		 *****************************************************************/
 		void GetDate(unsigned short &month,
-					 			 unsigned short &day,
-					 		 	 unsigned short &year)	const;
+			     unsigned short &day,
+			     unsigned short &year) const;
 		unsigned short GetYear()	const;
 		unsigned short GetMonth()	const;
 		unsigned short GetDay()		const;
@@ -53,7 +53,7 @@ class Date
 					 UTILITIES	METHODS
 			*******************************************************************/
 		unsigned short GetDaysInMonth(unsigned short month,
-									  							unsigned short year) const;
+					      unsigned short year) const;
 		bool IsLeapYear(unsigned short year) const;
 			/******************************************************************
 							VALIDATE	METHODS
@@ -62,14 +62,14 @@ class Date
 		bool ValidateMonth(unsigned	short month) const;
 		//	Checks if the day is valid takes leap year into consideration
 		bool ValidateDay(unsigned short month,
-										 unsigned short day,
-										 unsigned short year) const;
+				 unsigned short day,
+				 unsigned short year) const;
 		//	Validates the year is between 1900 and the current year
 		bool ValidateYear(unsigned short year) const;
 		//	Uses methods above to validate a given date	- checks against current day
 		bool ValidateDate(unsigned short month,
-										  unsigned short day,
-										  unsigned short year) const;
+				  unsigned short day,
+				  unsigned short year) const;
 
 			/*****************************************************************
 							ATTRIBUTES
