@@ -20,25 +20,25 @@ class MoneyMarket: public Savings
 		 ****************************/
 		MoneyMarket();
 		MoneyMarket(Date	openingDate,
-								string	name,
-								int		accountNum,
-								float	balance,
-								float	intRate,
-								float	withdrPenalty);
+			    string	name,
+			    int		accountNum,
+			    float	balance,
+			    float	intRate,
+			    float	withdrPenalty);
 		virtual ~MoneyMarket();
 
 		/************
 		 * MUTATORS *
 		 ***********/
 		void SetAllValues(Date		openingDate,
-										  string	name,
-										  int		accountNum,
-										  float		balance,
-										  float		intRate,
-										  float		withdrPenalty);
+				  string	name,
+				  int		accountNum,
+				  float		balance,
+				  float		intRate,
+				  float		withdrPenalty);
 		void SetWithdrawalPenalty(float withdrPenalty);
 		virtual bool Withdrawal(Date 	today,
-														float	amount);
+					float	amount);
 
 		/*************
 		 * ACCESSORS *
@@ -68,11 +68,11 @@ class MoneyMarket: public Savings
 
 /******************************************************************************
 * MoneyMarket(Date		openingDate,
-*			  string	name,
-*			  int		accountNum,
-*			  float		balance,
-*			  float		intRate,
-*			  float		withdrPenalty);
+*	      string		name,
+*	      int		accountNum,
+*	      float		balance,
+*	      float		intRate,
+*	      float		withdrPenalty);
 * 	Constructor; Initialize class attributes
 * 	Parameters: openingDate (Date)		//IN - account's open date
 * 				name		(string)	//IN - client's name
@@ -95,22 +95,22 @@ class MoneyMarket: public Savings
 
 /******************************************************************************
 * void SetAllValues(Date	openingDate,
-*					string	name,
-*					int		accountNum,
-*					float	balance,
-*					float	intRate,
-*					float	withdrPenalty);
+*		    string	name,
+*		    int		accountNum,
+*		    float	balance,
+*		    float	intRate,
+*		    float	withdrPenalty);
 *
 * 	Mutator; This method receives 6 parameters' values to initialize the 7 attributes
 * 		of a checking object: openDate, lastAccessDate, clientName, acctNumber,
 * 		currentBalance, interestRate, and withdrawalPenalty.
 * ----------------------------------------------------------------------------
 * 	Parameters: openingDate  (Date)		//IN - account's open date
-* 				name		 (string)	//IN - client's name
-* 				accountNum	 (integer)	//IN - account's number
-* 				balance		 (float)	//IN - account's balance
-* 				intRate		 (float)	//IN - interest rate of money market
-* 				withdrPenalty(float)	//IN - MM withdrawal penalty
+* 		    name	(string)	//IN - client's name
+* 		    accountNum	 (integer)	//IN - account's number
+* 		    balance	(float)		//IN - account's balance
+* 		    intRate	(float)		//IN - interest rate of money market
+* 		    withdrPenalty(float)	//IN - MM withdrawal penalty
 * ----------------------------------------------------------------------------
 * 	Return: none
 * ****************************************************************************/
@@ -128,7 +128,7 @@ class MoneyMarket: public Savings
 
 /******************************************************************************
 * virtual bool Withdrawal(Date  today,
-*						  float amount);
+*			  float amount);
 *
 * 	Mutator; This method receives 2 parameters' values: today and amount to
 * 		to validate whether one's account can be withdrawn or not. This method
