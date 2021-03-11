@@ -43,10 +43,10 @@ Checking::Checking()
  * 	 A new checking object is created
  *****************************************************************************/
 Checking::Checking(Date		openingDate,	//IN - account's open date
-								   string	name,			//IN - client's name
-								   int		accountNum,		//IN - account's number
-								   float	balance,		//IN - account's balance
-								   float	overdraftFee)	//IN - overdraft penalty fee
+		   string	name,		//IN - client's name
+		   int		accountNum,	//IN - account's number
+		   float	balance,	//IN - account's balance
+		   float	overdraftFee)	//IN - overdraft penalty fee
 {
 	Account::SetAllValues(openingDate, name, accountNum, balance);
 	overdraftPenalty = overdraftFee;
@@ -86,10 +86,10 @@ Checking::~Checking(){}
  * 	 Returns nothing
  *****************************************************************************/
 void Checking::SetAllValues(Date 	openingDate,	//IN - account's open date
-												    string	name,			//IN - client's name
-												    int		accountNum,		//IN - account's number
-												    float	balance,		//IN - account's balance
-												    float	overdraftFee)	//IN - overdraft penalty fee
+			    string	name,		//IN - client's name
+			    int		accountNum,	//IN - account's number
+			    float	balance,	//IN - account's balance
+			    float	overdraftFee)	//IN - overdraft penalty fee
 {
 	Account::SetAllValues(openingDate, name, accountNum, balance);
 	overdraftPenalty = overdraftFee;
@@ -132,14 +132,14 @@ void Checking::SetOverdraftFee(float overdraftFee)	//IN - overdraft penalty fee
  * 	 Returns valid withdraw (Bool)
  *****************************************************************************/
 bool Checking::Withdrawal(Date 	today,	//IN - date of transaction
-						  						float	amount)	//IN - amount to deposit
+			  float	amount)	//IN - amount to deposit
 {
 	const float MAX_WITHDRAW = -200.00;
 
 	bool validWithdraw;		//CALC - validating withdrawal
 
 	validWithdraw = (currentBalance - amount > 0 ||
-					 				 currentBalance - amount > MAX_WITHDRAW);
+			 currentBalance - amount > MAX_WITHDRAW);
 
 	if(validWithdraw)
 	{
