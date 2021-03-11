@@ -41,15 +41,15 @@ Account::Account()
  * 	 A new account object is created
  *****************************************************************************/
 Account::Account(Date 	openingDate,	//IN - account's open date
-								 string	name,			//IN - client's name
-								 int	accountNum,		//IN - account's number
-								 float	balance)		//IN - account's balance
+		 string	name,		//IN - client's name
+		 int	accountNum,	//IN - account's number
+		 float	balance)	//IN - account's balance
 {
-	openDate  	   = openingDate;
-	lastAccessDate = openingDate;
-	clientName 	   = name;
-	acctNumber 	   = accountNum;
-	currentBalance = balance;
+	openDate  	= openingDate;
+	lastAccessDate 	= openingDate;
+	clientName 	= name;
+	acctNumber 	= accountNum;
+	currentBalance 	= balance;
 }
 
 /******************************************************************************
@@ -88,15 +88,15 @@ Account::~Account(){}
  * 	 Returns nothing
  *****************************************************************************/
 void Account::SetAllValues(Date 	openingDate,	//IN - account's open date
-												   string	name,			//IN - client's name
-												   int		accountNum,		//IN - account's number
-												   float	balance)		//IN - account's balance
+			   string	name,		//IN - client's name
+			   int		accountNum,	//IN - account's number
+			   float	balance)	//IN - account's balance
 {
-	openDate  	   = openingDate;
-	lastAccessDate = openingDate;
-	clientName 	   = name;
-	acctNumber 	   = accountNum;
-	currentBalance = balance;
+	openDate  	= openingDate;
+	lastAccessDate 	= openingDate;
+	clientName 	= name;
+	acctNumber 	= accountNum;
+	currentBalance 	= balance;
 }
 
 /******************************************************************************
@@ -192,7 +192,7 @@ void Account::SetValue(Date openingDate)	//IN - account's open date
  * 	 Returns nothing
  *****************************************************************************/
 void Account::Deposit(Date  today,	//IN - date of transaction
-					  					float amount)	//IN - amount to deposit
+		      float amount)	//IN - amount to deposit
 {
 	UpdateAcct(today);
 	currentBalance += amount;
@@ -216,7 +216,7 @@ void Account::Deposit(Date  today,	//IN - date of transaction
  * 	 Returns valid withdraw (Bool)
  *****************************************************************************/
 bool Account::Withdrawal(Date  today,	//IN - date of transaction
-						 						 float amount)	//IN - amount to deposit
+			 float amount)	//IN - amount to deposit
 {
 	bool validWD;	//CALC - validating withdrawal
 
@@ -253,15 +253,15 @@ bool Account::Withdrawal(Date  today,	//IN - date of transaction
  * POST-CONDITIONS
  * 	 Returns valid transfer (Bool)
  *****************************************************************************/
-bool Account::TransferFunds(Date 	today,						//IN - date of transaction
-														Account	*transferAcct,	//IN - transfer account's pointer
-														float	amount)						//IN - amount to withdraw
+bool Account::TransferFunds(Date 	today,		//IN - date of transaction
+			    Account	*transferAcct,	//IN - transfer account's pointer
+			    float	amount)		//IN - amount to withdraw
 {
 	bool validTransf;	//CALC - validating transfer
 
 	transferAcct->UpdateAcct(today);
 	validTransf = (transferAcct->acctNumber != acctNumber &&
-				   			 transferAcct->GetBalance() > amount);
+		       transferAcct->GetBalance() > amount);
 
 	if(validTransf && transferAcct->Withdrawal(today, amount))
 	{
