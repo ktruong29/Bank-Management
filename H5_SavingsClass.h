@@ -20,23 +20,23 @@ class Savings: public Account
 		 ****************************/
 		Savings();
 		Savings(Date	openingDate,
-						string	name,
-						int		accountNum,
-						float	balance,
-						float	intRate);
+			string	name,
+			int	accountNum,
+			float	balance,
+			float	intRate);
 		virtual ~Savings();
 
 		/************
 		 * MUTATORS *
 		 ***********/
 		void SetAllValues(Date 		openingDate,
-										  string	name,
-										  int		accountNum,
-										  float		balance,
-										  float		intRate);
+				  string	name,
+				  int		accountNum,
+				  float		balance,
+				  float		intRate);
 		void SetInterestRate(float intRate);
 		virtual bool Withdrawal(Date 	today,
-														float	amount);
+					float	amount);
 		virtual void UpdateAcct(Date today);
 
 		/*************
