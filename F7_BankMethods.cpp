@@ -122,9 +122,9 @@ void Bank::OpenAccount(Account *newAcct)	//IN - account object
  * POST-CONDITIONS
  * 	 Returns valid deposit (bool)
  *****************************************************************************/
-bool Bank::Deposit(Date 	transDate,	//IN - transaction date
-								   int	    acctNum,	//IN - account's number
-								   float	amount)			//IN - deposit amount
+bool Bank::Deposit(Date     transDate,	//IN - transaction date
+		   int	    acctNum,	//IN - account's number
+		   float    amount)	//IN - deposit amount
 {
 	Account		*foundAcct;		//CALC - found account pointer
 	bool 		validDeposit;	//CALC - validating deposit
@@ -137,7 +137,7 @@ bool Bank::Deposit(Date 	transDate,	//IN - transaction date
 	{
 		foundAcct->Deposit(transDate, amount);
 		OutputAcctInfo("Deposit", transDate.DisplayDate(), acctNum,
-					   				foundAcct->GetName(), amount, foundAcct->GetBalance());
+				foundAcct->GetName(), amount, foundAcct->GetBalance());
 		validDeposit = true;
 	}
 
@@ -164,11 +164,11 @@ bool Bank::Deposit(Date 	transDate,	//IN - transaction date
  * 	 Returns valid withdraw (Bool)
  *****************************************************************************/
 bool Bank::Withdrawal(Date 	transDate,	//IN - transaction date
-										  int	acctNum,	//IN - account's number
-										  float	amount)		//IN - deposit amount
+		      int	acctNum,	//IN - account's number
+		      float	amount)		//IN - deposit amount
 {
 	Account	 	*foundAcct;		//CALC - found account pointer and uses Account
-													//	   - class methods
+						//	   - class methods
 	bool 		validWithdr;		//CALC - validating deposit
 
 	validWithdr = false;
@@ -179,8 +179,8 @@ bool Bank::Withdrawal(Date 	transDate,	//IN - transaction date
 		if(foundAcct->Withdrawal(transDate, amount))
 		{
 			OutputAcctInfo("Withdrawal", foundAcct->GetLastTransDate().DisplayDate(),
-											acctNum, foundAcct->GetName(), amount,
-											foundAcct->GetBalance());
+					acctNum, foundAcct->GetName(), amount,
+					foundAcct->GetBalance());
 			validWithdr = true;
 		}
 	}
@@ -212,14 +212,14 @@ bool Bank::Withdrawal(Date 	transDate,	//IN - transaction date
  * POST-CONDITIONS
  * 	 Returns valid transfer (Bool)
  *****************************************************************************/
-bool Bank::Transfer(Date 	transDate,				//IN - transaction date
-								    int		acctNum,					//IN - account's number
-								    float	amount,						//IN - deposit amount
-										int		transFromAcctNum)	//IN - transfer account number
+bool Bank::Transfer(Date 	transDate,		//IN - transaction date
+		    int		acctNum,		//IN - account's number
+		    float	amount,			//IN - deposit amount
+		    int		transFromAcctNum)	//IN - transfer account number
 {
-	Account 	*depositAcctPtr;	//CALC - deposit account pointer
-	Account	  *transAcctPtr;		//CALC - transfer account pointer
-	bool 			validTransf;		//CALC - validating transfer
+	Account   *depositAcctPtr;	//CALC - deposit account pointer
+	Account	  *transAcctPtr;	//CALC - transfer account pointer
+	bool 	  validTransf;		//CALC - validating transfer
 
 	validTransf = false;
 
@@ -232,11 +232,11 @@ bool Bank::Transfer(Date 	transDate,				//IN - transaction date
 		if(depositAcctPtr->TransferFunds(transDate, transAcctPtr, amount))
 		{
 			OutputTransfAcctInfo("Transfer",
-								 depositAcctPtr->GetLastTransDate().DisplayDate(),
-								 depositAcctPtr->GetAcctNum(),
-								 depositAcctPtr->GetName(), amount,
-								 depositAcctPtr->GetBalance(),
-								 transAcctPtr->GetAcctNum(), transAcctPtr->GetBalance());
+					     depositAcctPtr->GetLastTransDate().DisplayDate(),
+					     depositAcctPtr->GetAcctNum(),
+					     depositAcctPtr->GetName(), amount,
+					     depositAcctPtr->GetBalance(),
+					     transAcctPtr->GetAcctNum(), transAcctPtr->GetBalance());
 			validTransf = true;
 		}
 
@@ -292,11 +292,11 @@ void Bank::OutputList() const
 Account *Bank::FindAccountPtr(int acctNum)	//IN - account's number
 {
 	AccountList *searchPtr;	//CALC - searching the pointer with correct acct's num
-	Account			*acctPtr;	//CALC - returning the found account's pointer
-	bool				found;		//CALC - used in sequential search
+	Account	    *acctPtr;	//CALC - returning the found account's pointer
+	bool	    found;	//CALC - used in sequential search
 
 	searchPtr   = head;
-	found 		= false;
+	found 	    = false;
 
 	while(searchPtr != NULL && !found)
 	{
