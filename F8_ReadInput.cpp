@@ -29,17 +29,17 @@ void ReadInput(Bank &aBank) //IN - bank class object to store accounts in list
 	Account *savings;	//CALC - dynamically allocates class Savings
 	Account *moneyM;	//CALC - dynamically allocates class MoneyMarket
 
-	Date today;			//CALC - initialize date in Date class
+	Date today;		//CALC - initialize date in Date class
 
 	unsigned short month;	//IN - month of transaction
-	unsigned short day;		//IN - day of transaction
+	unsigned short day;	//IN - day of transaction
 	unsigned short year;	//IN - year of transaction
-	int 	acctNum;		//IN - account number
-	string 	acctType;		//IN - account type
-	float 	bal;			//IN - account balance
-	string 	name;			//IN - client's name
+	int 	acctNum;	//IN - account number
+	string 	acctType;	//IN - account type
+	float 	bal;		//IN - account balance
+	string 	name;		//IN - client's name
 
-	ifstream fin;			//CALC - input file stream variable
+	ifstream fin;		//CALC - input file stream variable
 
 	fin.open("AcctFile.txt");
 
@@ -60,22 +60,22 @@ void ReadInput(Bank &aBank) //IN - bank class object to store accounts in list
 			checking = new Checking(today, name, acctNum, bal, CHKG_OVERDR_FEE);
 			aBank.OpenAccount(checking);
 			OutputAcctInfo("OPEN CHECKING", today.DisplayDate(), acctNum,
-											name, bal, bal);
+					name, bal, bal);
 		}
 		else if(acctType == "Savings")
 		{
 			savings = new Savings(today, name, acctNum, bal, SAVINGS_INTRST);
 			aBank.OpenAccount(savings);
 			OutputAcctInfo("OPEN SAVINGS", today.DisplayDate(), acctNum,
-											name, bal, bal);
+					name, bal, bal);
 		}
 		else if(acctType == "MM")
 		{
 			moneyM = new MoneyMarket(today, name, acctNum, bal, MONEY_M_INTRST,
-									 						 MM_WTHDRW_FEE);
+						 MM_WTHDRW_FEE);
 			aBank.OpenAccount(moneyM);
 			OutputAcctInfo("OPEN Money Market", today.DisplayDate(), acctNum,
-							name, bal, bal);
+					name, bal, bal);
 		}
 
 	}
