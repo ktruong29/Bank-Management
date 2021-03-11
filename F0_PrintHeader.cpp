@@ -24,10 +24,10 @@
 * POST-CONDITIONS
 * 	- This function will output the assignment heading.
 * ****************************************************************************/
-string PrintHeader(string programmer,   // IN - programmers' names
-									 string asName,	    // IN - assignment name
-									 char   asType, 	    // IN - assignment type
-									 int    asNum)		// IN - assignment number
+string PrintHeader(string programmer,       // IN - programmers' names
+		   string asName,	    // IN - assignment name
+		   char   asType, 	    // IN - assignment type
+		   int    asNum)	    // IN - assignment number
 
 {
 	ostringstream str;			//OUT: to store output as a string
