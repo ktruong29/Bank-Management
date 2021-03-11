@@ -20,18 +20,18 @@ class Account
 		 ****************************/
 		Account();
 		Account(Date 	openingDate,
-						string	name,
-						int		accountNum,
-						float	balance);
+			string	name,
+			int		accountNum,
+			float	balance);
 		virtual ~Account();
 
 		/************
 		 * MUTATORS *
 		 ***********/
 		void SetAllValues(Date 		openingDate,
-										  string	name,
-									    int		  accountNum,
-										  float		balance);
+				  string	name,
+			    	  int		accountNum,
+				  float		balance);
 		void SetValue(string name);
 		void SetValue(int	 accountNum);
 		void SetValue(float	 balance);
@@ -43,7 +43,7 @@ class Account
 		 * Adds the amount into the account
 		 *********************************************************************/
 		virtual void Deposit(Date  today,
-							 					 float amount);
+				     float amount);
 
 		/**********************************************************************
 		 * Withdrawal
@@ -52,7 +52,7 @@ class Account
 		 * => Returns FALSE if withdrawal can't be performed
 		 *********************************************************************/
 		virtual bool Withdrawal(Date  today,
-													  float amount);
+					float amount);
 
 		/**********************************************************************
 		 * TransferFunds
@@ -64,8 +64,8 @@ class Account
 		 * 		Returns TRUE if transfer is completed
 		 *********************************************************************/
 		virtual bool TransferFunds(Date 	  today,
-														   Account	*transferAcct,
-														   float	  amount);
+					   Account	*transferAcct,
+					   float	  amount);
 
 		/**********************************************************************
 		 * UpdateAcct
@@ -79,15 +79,15 @@ class Account
 		/*************
 		 * ACCESSORS *
 		 ************/
-		Date		GetOpenDate()	   	const;
-		string	GetName()		   		const;
-		int			GetAcctNum()	   	const;
-		float		GetBalance()	   	const;
-		Date		GetLastTransDate()const;
+		Date	GetOpenDate()	   	const;
+		string	GetName()		const;
+		int	GetAcctNum()	   	const;
+		float	GetBalance()	   	const;
+		Date	GetLastTransDate()	const;
 
 	protected:
 		string	clientName;
-		int		acctNumber;
+		int	acctNumber;
 		float	currentBalance;
 		Date	openDate;
 		Date	lastAccessDate;
