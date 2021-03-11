@@ -72,9 +72,9 @@ const int FR_ACCT_BAL_COL 	= 13;
 * when called in main() - returns nothing
 * ****************************************************************************/
 string PrintHeader(string programmer,   // IN - programmers' names
-						       string asName,	    	// IN - assignment name
-								   char   asType, 	    // IN - assignment type
-								   int    asNum);				// IN - assignment number
+	           string asName,	// IN - assignment name
+		   char   asType, 	// IN - assignment type
+		   int    asNum);	// IN - assignment number
 
 /******************************************************************************
  * F2_ValidateIntInput
@@ -86,11 +86,11 @@ string PrintHeader(string programmer,   // IN - programmers' names
  * 		input again.
  * 		==> returns the valid integer input from the user of type unsigned short
  *****************************************************************************/
-unsigned short ValidateIntInput(string 		   prompt,  // IN - prompt to output
+unsigned short ValidateIntInput(string 	       prompt,  // IN - prompt to output
 																											//	  - to console
-																unsigned short minNum,	// IN - min number to
-																												//	  - error check input
-																unsigned short maxNum);	// IN - max number to
+				unsigned short minNum,	// IN - min number to
+							//	  - error check input
+				unsigned short maxNum);	// IN - max number to
 																												//	  - error check input
 
 /******************************************************************************
@@ -125,11 +125,11 @@ void OutputTableFormat();
  * 		==> returns nothing
  *****************************************************************************/
 void OutputAcctInfo(string transType,	//IN - transaction type
-										string date,			//IN - date of transaction
-										int	   acctNum,		//IN - account number
-										string name,			//IN - client's name
-										float  amount,		//IN - amount of transaction
-										float  balance);	//IN - balance after each transaction
+		    string date,	//IN - date of transaction
+		    int	   acctNum,	//IN - account number
+		    string name,	//IN - client's name
+		    float  amount,	//IN - amount of transaction
+		    float  balance);	//IN - balance after each transaction
 
 /******************************************************************************
  * F9-3_OutputTransfAcctInfo
@@ -138,13 +138,13 @@ void OutputAcctInfo(string transType,	//IN - transaction type
  * 		number and transfer account balance.
  * 		==> returns nothing
  *****************************************************************************/
-void OutputTransfAcctInfo(string transType,			//IN - transaction type
-												  string date,					//IN - date of transaction
-												  int	 acctNum,					//IN - account number
-												  string name,					//IN - client's name
-												  float  amount,				//IN - amount of transaction
-												  float  balance,				//IN - balance after each transaction
-												  int    transfAcctNum,	//IN - transfer account number
-												  float  transfAcctBal);//IN - transfer account balance
+void OutputTransfAcctInfo(string transType,	//IN - transaction type
+			  string date,		//IN - date of transaction
+			  int	 acctNum,	//IN - account number
+			  string name,		//IN - client's name
+			  float  amount,	//IN - amount of transaction
+			  float  balance,	//IN - balance after each transaction
+			  int    transfAcctNum,	//IN - transfer account number
+			  float  transfAcctBal);//IN - transfer account balance
 
 #endif /* H1_MYHEADER_H_ */
