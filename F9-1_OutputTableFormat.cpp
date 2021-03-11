@@ -22,23 +22,23 @@
 ******************************************************************************/
 void OutputTableFormat()
 {
-	cout << left  << setw(TRANS_COL)		<< "TRANSACTION"
-							  << setw(DATE_COL)   	<< "DATE"
-							  << setw(ACCT_COL)	  	<< "ACCT #"
-							  << setw(NAME_COL)   	<< "ACCT NAME"
-		 	<< right  << setw(AMOUNT_COL) 	<< "AMOUNT" 	<< "   "
-					 	 	  << setw(BAL_COL)	  			<< "BALANCE"	<< "     "
-						    << setw(FR_ACCT_COL)			<< "FROM ACCT#"	<< "     "
-							  << setw(FR_ACCT_BAL_COL) 	<< "FROM ACCT BAL" << endl;
+	cout << left  << setw(TRANS_COL)  << "TRANSACTION"
+		      << setw(DATE_COL)   << "DATE"
+		      << setw(ACCT_COL)	  << "ACCT #"
+		      << setw(NAME_COL)   << "ACCT NAME"
+	     << right << setw(AMOUNT_COL) << "AMOUNT" 	<< "   "
+		      << setw(BAL_COL)	  << "BALANCE"	<< "     "
+		      << setw(FR_ACCT_COL)  << "FROM ACCT#"	<< "     "
+		      << setw(FR_ACCT_BAL_COL) 	<< "FROM ACCT BAL" << endl;
 
-	cout << left  << setfill('-') << setw(TRANS_COL - 7) 	<< '-' << "       "
-											 	 	 	 	  << setw(DATE_COL - 3)  	<< '-' << "   "
-															  << setw(ACCT_COL - 3)	 	<< '-' << "   "
-															  << setw(NAME_COL - 3)  	<< '-' << "   "
-		 << right 				  				<< setw(AMOUNT_COL)	 	<<'-' << "   "
-									 	 	 	 	 	 	  << setw(BAL_COL)		 	<< '-' << "     "
-															  << setw(FR_ACCT_COL)	  	<< '-'	<< "     "
-															  << setw(FR_ACCT_BAL_COL)	<< '-' << endl;
+	cout << left  << setfill('-') << setw(TRANS_COL - 7) 	 << '-' << "       "
+				      << setw(DATE_COL - 3)  	 << '-' << "   "
+				      << setw(ACCT_COL - 3)	 << '-' << "   "
+				      << setw(NAME_COL - 3)  	 << '-' << "   "
+	     << right 		      << setw(AMOUNT_COL)	 << '-' << "   "
+				      << setw(BAL_COL)		 << '-' << "     "
+				      << setw(FR_ACCT_COL)	 << '-'	<< "     "
+				      << setw(FR_ACCT_BAL_COL)	 << '-' << endl;
 	cout << setfill(' ');
 
 }
