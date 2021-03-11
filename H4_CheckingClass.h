@@ -20,23 +20,23 @@ class Checking: public Account
 		 ****************************/
 		Checking();
 		Checking(Date	openingDate,
-						 string	name,
-						 int	accountNum,
-						 float	balance,
-						 float	overdraftFee);
+			 string	name,
+			 int	accountNum,
+			 float	balance,
+			 float	overdraftFee);
 		virtual ~Checking();
 
 		/************
 		 * MUTATORS *
 		 ***********/
 		void SetAllValues(Date 		openingDate,
-										  string	name,
-										  int		accountNum,
-										  float		balance,
-										  float		overdraftFee);
+				  string	name,
+				  int		accountNum,
+				  float		balance,
+				  float		overdraftFee);
 		void SetOverdraftFee(float overdraftFee);
 		virtual bool Withdrawal(Date 	today,
-														float	amount);
+					float	amount);
 		virtual void UpdateAcct(Date today);
 
 		/*************
@@ -94,10 +94,10 @@ class Checking: public Account
 
 /******************************************************************************
 * void SetAllValues(Date 	openingDate,
-*					string	name,
-*				    int		accountNum,
-*					float	balance,
-*					float	overdraftFee);
+*		    string	name,
+*		    int		accountNum,
+*		    float	balance,
+*		    float	overdraftFee);
 *
 * 	Mutator; This method receives 5 parameters' values to initialize the 5 attributes
 * 		of a checking object: openDate, lastAccessDate, clientName, acctNumber,
