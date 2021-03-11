@@ -45,8 +45,8 @@ Date::Date()
  * 	 A new date object is created
  *****************************************************************************/
 Date::Date(unsigned short month,	//IN - month of the year
-				   unsigned short day,		//IN - day of the year
-			     unsigned short year)		//IN - year
+	   unsigned short day,		//IN - day of the year
+     	   unsigned short year)		//IN - year
 {
 	if(!ValidateDate(month, day, year))
 	{
@@ -103,8 +103,8 @@ Date::~Date(){};
  * 	 Returns nothing
  *****************************************************************************/
 void Date::SetDate(unsigned short month,	//IN - month of the year
-						 	 	   unsigned short day,		//IN - day of the year
-								   unsigned short year)		//IN - year
+		   unsigned short day,		//IN - day of the year
+		   unsigned short year)		//IN - year
 {
 	bool validDate;	//CALC - checking for valid date input
 
@@ -156,11 +156,11 @@ void Date::SetDate(unsigned short month,	//IN - month of the year
  * 	 Returns date's month, day, and year
  *****************************************************************************/
 void Date::GetDate(unsigned short &month,		//IN - month of the year
-								   unsigned short &day,			//IN - day of the year
-								   unsigned short &year) const	//IN - year
+		   unsigned short &day,			//IN - day of the year
+		   unsigned short &year) const	//IN - year
 {
 	month = dateMonth;
-	day	  = dateDay;
+	day   = dateDay;
 	year  = dateYear;
 }
 
@@ -257,13 +257,13 @@ string Date::DisplayDate() const
  * POST-CONDITIONS
  * 	 Returns days
  *****************************************************************************/
-unsigned short Date::GetDaysInMonth(unsigned short month,		//IN - date's month
-		  	  	  	  	  	  	  	unsigned short year) const	//IN - date's year
+unsigned short Date::GetDaysInMonth(unsigned short month,	//IN - date's month
+				    unsigned short year) const	//IN - date's year
 {
 	unsigned short days;	//CALC - days in a month
 
 	if((month == 1 || month == 3 || month == 5 || month == 7 ||
-			month == 8 || month == 10 || month == 12))
+	    month == 8 || month == 10 || month == 12))
 	{
 		days = 31;
 	}
@@ -362,8 +362,8 @@ bool Date::ValidateMonth(unsigned short month) const
  * 	 Returns valid day (bool)
  *****************************************************************************/
 bool Date::ValidateDay(unsigned short month,		//IN - month to validate day
-							 			   unsigned short day,			//IN - day to validate day
-										   unsigned short year) const	//IN - year to validate day
+		       unsigned short day,		//IN - day to validate day
+		       unsigned short year) const	//IN - year to validate day
 {
 	bool valid31Days;	//CALC - validating months having 31 days
 	bool valid30Days;	//CALC - validating months having 30 days
@@ -372,16 +372,16 @@ bool Date::ValidateDay(unsigned short month,		//IN - month to validate day
 
 	//Checking for months that have 31 days
 	valid31Days = ((month == 1 || month == 3 || month == 5 || month == 7 ||
-									month == 8 || month == 10 || month == 12)			 &&
-				   			 (day >= 1 && day <= 31));
+			month == 8 || month == 10 || month == 12)	     &&
+	 		(day >= 1 && day <= 31));
 
 	//Checking for months that have 30 days
 	valid30Days = ((month == 4 || month == 6 || month == 9 || month == 11) &&
-				   			 (day >= 1 && day <= 30));
+		       (day >= 1 && day <= 30));
 
 	//Checking for leap year
 	validFebDays = ((IsLeapYear(year)  && (day >= 1 && day <= 29)) ||
-									(!IsLeapYear(year) && (day >= 1 && day <= 28)));
+			(!IsLeapYear(year) && (day >= 1 && day <= 28)));
 
 	validDay = valid31Days || valid30Days || validFebDays;
 
@@ -435,14 +435,14 @@ bool Date::ValidateYear(unsigned short year) const //IN - year to validate year
  * 	 Returns valid date (bool)
  *****************************************************************************/
 bool Date::ValidateDate(unsigned short month,		//IN - month to validate date
-		  	  	  	  			unsigned short day,			//IN - day to validate date
-												unsigned short year) const	//IN - year to validate date
+			unsigned short day,		//IN - day to validate date
+			unsigned short year) const	//IN - year to validate date
 {
 	bool validDate;	//CALC - validating date
 
-	validDate = (ValidateMonth(month) &&
-							 ValidateDay(month, day, year) &&
-							 ValidateYear(year));
+	validDate = (ValidateMonth(month) 	   &&
+		     ValidateDay(month, day, year) &&
+		     ValidateYear(year));
 
 	return validDate;
 }
