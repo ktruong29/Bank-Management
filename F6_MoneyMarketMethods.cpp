@@ -44,11 +44,11 @@ MoneyMarket::MoneyMarket()
  * 	 A new money market object is created
  *****************************************************************************/
 MoneyMarket::MoneyMarket(Date	openingDate,	//IN - account's open date
-												 string	name,			//IN - client's name
-												 int	accountNum,		//IN - account's number
-												 float	balance,		//IN - account's balance
-												 float	intRate,		//IN - interest rate of MM account
-												 float	withdrPenalty)	//IN - withdraw penalty fee
+			 string	name,		//IN - client's name
+			 int	accountNum,	//IN - account's number
+			 float	balance,	//IN - account's balance
+			 float	intRate,	//IN - interest rate of MM account
+			 float	withdrPenalty)	//IN - withdraw penalty fee
 {
 	Savings::SetAllValues(openingDate, name, accountNum, balance, intRate);
 	withdrawalPenalty = withdrPenalty;
@@ -88,12 +88,12 @@ MoneyMarket::~MoneyMarket(){}
  * POST-CONDITIONS
  * 	 Returns nothing
  *****************************************************************************/
-void MoneyMarket::SetAllValues(Date		openingDate,	//IN - account's open date
-									 	 	 	 	 	   string	name,			//IN - client's name
-														   int		accountNum,		//IN - account's number
-														   float	balance,		//IN - account's balance
-														   float	intRate,		//IN - interest rate of MM
-														   float	withdrPenalty)	//IN - withdraw penalty fee
+void MoneyMarket::SetAllValues(Date	openingDate,	//IN - account's open date
+			       string	name,		//IN - client's name
+			       int	accountNum,	//IN - account's number
+			       float	balance,	//IN - account's balance
+			       float	intRate,	//IN - interest rate of MM
+			       float	withdrPenalty)	//IN - withdraw penalty fee
 {
 	Savings::SetAllValues(openingDate, name, accountNum, balance, intRate);
 	withdrawalPenalty = withdrPenalty;
@@ -136,7 +136,7 @@ void MoneyMarket::SetWithdrawalPenalty(float withdrPenalty) //IN - withdraw pena
  * 	 Returns valid withdraw (Bool)
  *****************************************************************************/
 bool MoneyMarket::Withdrawal(Date 	today,	//IN - date of transaction
-							 							 float	amount)	//IN - amount to deposit
+			     float	amount)	//IN - amount to deposit
 {
 	bool validWithdraw;	//CALC - validating withdrawal
 
